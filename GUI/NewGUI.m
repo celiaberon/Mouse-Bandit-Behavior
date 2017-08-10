@@ -22,7 +22,7 @@ function varargout = NewGUI(varargin)
 
 % Edit the above text to modify the response to help NewGUI
 
-% Last Modified by GUIDE v2.5 21-Jul-2016 15:00:03
+% Last Modified by GUIDE v2.5 10-Aug-2017 14:16:47
 
 % Begin initialization code - DO NOT EDIT
 %NOTE: THE ONLY REAL CHANGE IS IN THE LAST FUNCTION... THE BUTTON PUSHED
@@ -116,7 +116,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-
 function centerPokeRewardWindow_Callback(hObject, eventdata, handles)
 % hObject    handle to centerPokeRewardWindow (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -132,12 +131,9 @@ function centerPokeRewardWindow_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function leftRewardProb_Callback(hObject, eventdata, handles)
@@ -155,12 +151,9 @@ function leftRewardProb_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function rightRewardProb_Callback(hObject, eventdata, handles)
@@ -178,12 +171,9 @@ function rightRewardProb_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function ledDuringRewardWindow_Callback(hObject, eventdata, handles)
@@ -201,12 +191,9 @@ function ledDuringRewardWindow_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function rewardDurationRight_Callback(hObject, eventdata, handles)
@@ -224,12 +211,9 @@ function rewardDurationRight_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function rewardDurationLeft_Callback(hObject, eventdata, handles)
@@ -247,13 +231,9 @@ function rewardDurationLeft_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
 
 function minInterTrialInterval_Callback(hObject, eventdata, handles)
 % hObject    handle to minInterTrialInterval (see GCBO)
@@ -270,8 +250,6 @@ function minInterTrialInterval_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -293,8 +271,6 @@ function blockRangeMin_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -316,8 +292,44 @@ function blockRangeMax_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function laserstimprob_Callback(hObject, eventdata, handles)
+% hObject    handle to laserstimprob (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of laserstimprob as text
+%        str2double(get(hObject,'String')) returns contents of laserstimprob as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function laserstimprob_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to laserstimprob (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function markov_Callback(hObject, eventdata, handles)
+% hObject    handle to markov (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of markov as text
+%        str2double(get(hObject,'String')) returns contents of markov as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function markov_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to markov (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -344,6 +356,8 @@ p.rewardDurationLeft = str2double(get(handles.rewardDurationLeft, 'String'));
 p.minInterTrialInterval = str2double(get(handles.minInterTrialInterval, 'String'));
 p.blockRangeMin = str2double(get(handles.blockRangeMin, 'String'));
 p.blockRangeMax = str2double(get(handles.blockRangeMax, 'String'));
+p.laserstimprob = str2double(get(handles.laserstimprob, 'String'));
+p.markov = str2double(get(handles.markov, 'String'));
 %creates a global info struct to store the mouse's name and the folder's
 %path as inputted by the user. sets the running field to true and the
 %save field to NaN
@@ -361,6 +375,17 @@ if isempty(info.mouseName) || strcmp(info.folderName,'Default Folder Path') || s
     errordlg('Must input the mouse"s name and the directory in which the session"s data will be saved', 'INPUTS REQUIRED')
     %DIALOG BOX HERE
 end
+
+if p.markov==0 && strfind(info.mouseName, 'cb')
+    button = questdlg('Are you sure you don''t want to use Markovian transition probabilities?');
+    if strcmp(button,'No') || strcmp(button, 'Cancel')
+        ready = false;
+    end
+elseif p.markov < 0 || p.markov > 1
+    ready = false;
+    errordlg('Please enter a value for Markovian Transition Probability between 0 and 1.')
+end
+
 %if everything checks out, everything is disabled but the start and
 %save objects, and the experiment is run
 if ready
@@ -373,6 +398,8 @@ if ready
     set(handles.minInterTrialInterval, 'enable', 'off');
     set(handles.blockRangeMin, 'enable', 'off');
     set(handles.blockRangeMax, 'enable', 'off');
+    set(handles.laserstimprob, 'enable', 'off');
+    set(handles.markov, 'enable', 'off');
     set(handles.mouseName, 'enable', 'off');
     set(handles.folderPath, 'enable', 'off');
     set(handles.chooseFolder, 'enable', 'off');
@@ -386,7 +413,13 @@ if ready
     set(handles.getLeftCalibDuration,'enable','off');
     set(handles.getRightCalibDuration,'enable','off');
     set(handles.statsTable,'enable','on');
-    runTriplePortExperiment
+    if p.markov == 0
+        runTriplePortExperiment_laser
+    elseif p.markov > 0 && p.markov <=1
+        runTriplePortExperiment_markov
+    else
+        errordlg('Please enter a value for Markovian Transition Probability between 0 and 1.')
+    end
     
 end
 
@@ -428,8 +461,6 @@ function mouseName_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -466,6 +497,8 @@ set(handles.rewardDurationLeft, 'enable', 'on');
 set(handles.minInterTrialInterval, 'enable', 'on');
 set(handles.blockRangeMin, 'enable', 'on');
 set(handles.blockRangeMax, 'enable', 'on');
+set(handles.laserstimprob, 'enable', 'on');
+set(handles.markov, 'enable', 'on');
 set(handles.mouseName, 'enable', 'on');
 set(handles.folderPath, 'enable', 'on');
 set(handles.chooseFolder, 'enable', 'on');
@@ -481,6 +514,8 @@ set(handles.rewardDurationLeft, 'String', '45');
 set(handles.minInterTrialInterval, 'String', '1');
 set(handles.blockRangeMin, 'String', '50');
 set(handles.blockRangeMax, 'String', '50');
+set(handles.laserstimprob, 'String', '0');
+set(handles.markov, 'String', '0');
 set(handles.mouseName,'String','');
 set(handles.folderPath,'String','Default Folder Path');
 set(handles.save,'Value',1);
@@ -561,8 +596,6 @@ function leftCalibDuration_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -584,8 +617,6 @@ function rightCalibDuration_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -662,8 +693,27 @@ function numIterations_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit17_Callback(hObject, eventdata, handles)
+% hObject    handle to laserstimprob (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of laserstimprob as text
+%        str2double(get(hObject,'String')) returns contents of laserstimprob as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit17_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to laserstimprob (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
