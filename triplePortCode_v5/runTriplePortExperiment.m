@@ -128,7 +128,7 @@ end
 global currBlockReward blockRange transitionProb
 currBlockReward = 0;
 blockRange = [p.blockRangeMin:p.blockRangeMax];
-transitionProb = p.blockRangeMin;
+transitionProb = p.markov;
 
 global pokeHistory pokeCount
 pokeCount = 0;
