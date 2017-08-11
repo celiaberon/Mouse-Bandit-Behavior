@@ -19,7 +19,7 @@ for portN = 1:length(serialInfo.AvailableSerialPorts)
             return
         end
     else
-      if strfind(portName, 'COM6')     % 4 for shay's comp, 5 for NUC, 6 for new behavior rig?
+      if strfind(portName, 'COM3') || strfind(portName, 'COM6') % 4 for shay's comp, 5 for NUC, 6 for new behavior rig? 3 for box3?
         port = portN;
         return
       end

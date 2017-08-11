@@ -395,7 +395,7 @@ if isempty(info.mouseName) || strcmp(info.folderName,'Default Folder Path') || s
     %DIALOG BOX HERE
 end
 
-if p.ismarkov==0 && strfind(info.mouseName, 'cb') % use checkbox first
+if p.ismarkov==0 && ~isempty(strfind(info.mouseName, 'cb')) % use checkbox first
     button = questdlg('Are you sure you don''t want to use Markovian transition probabilities?');
     if strcmp(button,'No') || strcmp(button, 'Cancel')
         ready = false;
