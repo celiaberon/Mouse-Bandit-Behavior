@@ -22,7 +22,7 @@ function varargout = NewGUI(varargin)
 
 % Edit the above text to modify the response to help NewGUI
 
-% Last Modified by GUIDE v2.5 10-Aug-2017 14:16:47
+% Last Modified by GUIDE v2.5 11-Aug-2017 11:35:25
 
 % Begin initialization code - DO NOT EDIT
 %NOTE: THE ONLY REAL CHANGE IS IN THE LAST FUNCTION... THE BUTTON PUSHED
@@ -335,6 +335,24 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on button press in useMarkov.
+function useMarkov_Callback(hObject, eventdata, handles)
+% hObject    handle to useMarkov (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+if handles.useMarkov.Value == 1
+    set(handles.markov, 'enable', 'on');
+    set(handles.blockRangeMin, 'enable', 'off');
+    set(handles.blockRangeMax, 'enable', 'off');
+    set(handles.laserstimprob, 'enable', 'off');
+else
+    set(handles.markov, 'enable', 'off');
+    set(handles.blockRangeMin, 'enable', 'on');
+    set(handles.blockRangeMax, 'enable', 'on');
+    set(handles.laserstimprob, 'enable', 'on');
+end
+
+
 % --- Executes on button press in runExperiment.
 function runExperiment_Callback(hObject, eventdata, handles)
 % hObject    handle to runExperiment (see GCBO)
@@ -358,6 +376,7 @@ p.blockRangeMin = str2double(get(handles.blockRangeMin, 'String'));
 p.blockRangeMax = str2double(get(handles.blockRangeMax, 'String'));
 p.laserstimprob = str2double(get(handles.laserstimprob, 'String'));
 p.markov = str2double(get(handles.markov, 'String'));
+p.ismarkov = get(handles.useMarkov, 'Value');
 %creates a global info struct to store the mouse's name and the folder's
 %path as inputted by the user. sets the running field to true and the
 %save field to NaN
@@ -376,12 +395,12 @@ if isempty(info.mouseName) || strcmp(info.folderName,'Default Folder Path') || s
     %DIALOG BOX HERE
 end
 
-if p.markov==0 && strfind(info.mouseName, 'cb')
+if p.ismarkov==0 && strfind(info.mouseName, 'cb') % use checkbox first
     button = questdlg('Are you sure you don''t want to use Markovian transition probabilities?');
     if strcmp(button,'No') || strcmp(button, 'Cancel')
         ready = false;
     end
-elseif p.markov < 0 || p.markov > 1
+elseif p.markov < 0 || p.markov > 1 % check if valid entry for tprob
     ready = false;
     errordlg('Please enter a value for Markovian Transition Probability between 0 and 1.')
 end
@@ -413,9 +432,9 @@ if ready
     set(handles.getLeftCalibDuration,'enable','off');
     set(handles.getRightCalibDuration,'enable','off');
     set(handles.statsTable,'enable','on');
-    if p.markov == 0
+    if p.ismarkov == 0
         runTriplePortExperiment_laser
-    elseif p.markov > 0 && p.markov <=1
+    elseif p.ismarkov ==1
         runTriplePortExperiment_markov
     else
         errordlg('Please enter a value for Markovian Transition Probability between 0 and 1.')
@@ -498,7 +517,7 @@ set(handles.minInterTrialInterval, 'enable', 'on');
 set(handles.blockRangeMin, 'enable', 'on');
 set(handles.blockRangeMax, 'enable', 'on');
 set(handles.laserstimprob, 'enable', 'on');
-set(handles.markov, 'enable', 'on');
+set(handles.markov, 'enable', 'off');
 set(handles.mouseName, 'enable', 'on');
 set(handles.folderPath, 'enable', 'on');
 set(handles.chooseFolder, 'enable', 'on');
@@ -516,6 +535,7 @@ set(handles.blockRangeMin, 'String', '50');
 set(handles.blockRangeMax, 'String', '50');
 set(handles.laserstimprob, 'String', '0');
 set(handles.markov, 'String', '0');
+set(handles.useMarkov, 'Value', 0);
 set(handles.mouseName,'String','');
 set(handles.folderPath,'String','Default Folder Path');
 set(handles.save,'Value',1);
@@ -533,7 +553,6 @@ set(handles.leftCalibDuration,'enable','off');
 set(handles.getLeftCalibDuration,'enable','off');
 set(handles.getRightCalibDuration,'enable','off');
 set(handles.connectToArduino,'enable','on');
-
 global calib
 calib.left = 45;
 calib.right = 45;
@@ -717,3 +736,7 @@ function edit17_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+
+% Hint: get(hObject,'Value') returns toggle state of useMarkov
