@@ -400,7 +400,7 @@ if p.ismarkov==0 && ~isempty(strfind(info.mouseName, 'cb')) % use checkbox first
     if strcmp(button,'No') || strcmp(button, 'Cancel')
         ready = false;
     end
-elseif p.markov < 0 || p.markov > 1 % check if valid entry for tprob
+elseif p.markov <= 0 || p.markov >= 1 % check if valid entry for tprob
     ready = false;
     errordlg('Please enter a value for Markovian Transition Probability between 0 and 1.')
 end
